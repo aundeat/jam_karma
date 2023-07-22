@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 1009308838}
   - component: {fileID: 1009308841}
   - component: {fileID: 1009308840}
+  - component: {fileID: 1009308842}
   m_Layer: 0
   m_Name: demon
   m_TagString: Enemy
@@ -494,6 +495,32 @@ MonoBehaviour:
   bounceFrequency: 17
   swayAmount: 1
   swaySpeed: 18
+--- !u!114 &1009308842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009308832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52acc8a7e36fc8041bd82aee51ce7b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 1534923061299652033, guid: 6640b998e66741a46ab73964c43c0eee, type: 3}
+  projectileSpeed: 5
+  shootingActions:
+  - type: 0
+    amount: 1
+    spreadAngle: 0
+    targetError: 0
+    shootingInterval: 1
+  - type: 0
+    amount: 3
+    spreadAngle: 15
+    targetError: 1
+    shootingInterval: 3
+  target: {fileID: 1343391614}
 --- !u!1 &1065379182
 GameObject:
   m_ObjectHideFlags: 0
