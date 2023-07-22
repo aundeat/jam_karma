@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -184,7 +185,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.8857417
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -208,13 +209,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.01, z: -10}
+  m_LocalPosition: {x: 1.33, y: 0.34, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 546db8382df60d941b7ea1d190af01ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1343391614}
+  smoothTime: 0.3
 --- !u!1 &1009308832
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,11 +261,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ceb2aea4aaed274fb7a03c162133c06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  bounceHeight: 0.1
-  bounceFrequency: 5
-  swayAmount: 10
-  swaySpeed: 2
+  moveSpeed: 1
+  bounceHeight: 2
+  bounceFrequency: 17.28
+  swayAmount: 1
+  swaySpeed: 18.47
 --- !u!50 &1009308834
 Rigidbody2D:
   serializedVersion: 4
@@ -3276,10 +3291,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  swayAmount: 5
-  swaySpeed: 2
-  bounceHeight: 0.1
-  bounceFrequency: 5
+  swayAmount: 1
+  swaySpeed: 12.68
+  bounceHeight: 2
+  bounceFrequency: 15.93
 --- !u!1 &1702173401
 GameObject:
   m_ObjectHideFlags: 0
