@@ -2083,3 +2083,40 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1126.659666 seconds.
+  path: Assets/Scenes/main_menu_spr/tile_3.prefab
+  artifactKey: Guid(dec30f07910b5834cb1953ab423d45f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/main_menu_spr/tile_3.prefab using Guid(dec30f07910b5834cb1953ab423d45f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05a6048a398b0e73877336d91d14de48') in 0.095278 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Scenes/main_menu_spr/villager_02.prefab
+  artifactKey: Guid(f02e033a6885bb34d8efd78e3f7f98a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/main_menu_spr/villager_02.prefab using Guid(f02e033a6885bb34d8efd78e3f7f98a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dfb1174c34ecda26491c339bf13e295') in 0.022851 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Scenes/main_menu_spr/tile_11.prefab
+  artifactKey: Guid(0e91379aaa06e1946b5a7781eced87da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/main_menu_spr/tile_11.prefab using Guid(0e91379aaa06e1946b5a7781eced87da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ca726d6b40824340ed3c0850690c806') in 0.020431 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Scenes/main_menu_spr/villager_04.prefab
+  artifactKey: Guid(5ad9d3925ed43b24baa3a1a9ba5f8238) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/main_menu_spr/villager_04.prefab using Guid(5ad9d3925ed43b24baa3a1a9ba5f8238) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec97be20346d63613df5ac33c5a2fe05') in 0.019054 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: Der E/A-Vorgang wurde wegen eines Threadendes oder einer Anwendungsanforderung abgebrochen.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
