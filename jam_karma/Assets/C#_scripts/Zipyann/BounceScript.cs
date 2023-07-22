@@ -1,18 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BounceScript : MonoBehaviour
 {
+    public float bounceHeight = 0.1f;
+    public float bounceFrequency = 5f;
+
+    public float swayAmount = 10f;
+    public float swaySpeed = 2f;
+
+    private float defaultRotation;
+
+    private Rigidbody2D rb;
+    private SpriteRenderer sprite;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
+
+        defaultRotation = rb.rotation;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (!IsMoving())
+        {
+            rb.rotation = defaultRotation;
+        }
+
+        if (IsMoving())
+        {
+            // Bounce and sway
+            // Bouncing
+            Vector2 bounce = new Vector2(0, Mathf.Sin(Time.fixedTime * bounceFrequency) * bounceHeight);
+            rb.velocity += bounce;
+
+            // Swaying
+            float sway = Mathf.Sin(Time.fixedTime * swaySpeed) * swayAmount;
+            rb.rotation += sway;
+        }
+    }
+
+
+    private bool IsMoving()
+    {
+
+        return rb.velocity.magnitude > 0;
     }
 }

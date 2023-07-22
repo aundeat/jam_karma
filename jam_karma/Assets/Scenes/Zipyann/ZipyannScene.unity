@@ -245,6 +245,8 @@ GameObject:
   - component: {fileID: 1009308837}
   - component: {fileID: 1009308839}
   - component: {fileID: 1009308838}
+  - component: {fileID: 1009308841}
+  - component: {fileID: 1009308840}
   m_Layer: 0
   m_Name: demon
   m_TagString: Enemy
@@ -259,7 +261,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009308832}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ceb2aea4aaed274fb7a03c162133c06, type: 3}
   m_Name: 
@@ -437,6 +439,61 @@ MonoBehaviour:
   damagePlayer: 1
   damageEnemy: 0
   damageAmount: 1
+--- !u!114 &1009308840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009308832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6790327aeab95d442b47dc0eb67881ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1343391609}
+  directions:
+  - direction: {x: 0, y: 0}
+    speed: 2
+    duration: 3
+    followError: 3
+    type: 0
+  - direction: {x: 0, y: 0}
+    speed: 7
+    duration: 0.5
+    followError: 0.5
+    type: 0
+  - direction: {x: 0, y: 0}
+    speed: 7
+    duration: 0.5
+    followError: 0
+    type: 1
+  - direction: {x: 0, y: 0}
+    speed: 2
+    duration: 3
+    followError: 3
+    type: 0
+  - direction: {x: 0, y: 0}
+    speed: 7
+    duration: 0.7
+    followError: 0
+    type: 0
+--- !u!114 &1009308841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009308832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e51c265be074784c9f51822819d23d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceHeight: 2
+  bounceFrequency: 17
+  swayAmount: 1
+  swaySpeed: 18
 --- !u!1 &1065379182
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +569,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0.03333336, y: 0.03333336, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -2696,7 +2753,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0.03333336, y: 0.03333336, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
