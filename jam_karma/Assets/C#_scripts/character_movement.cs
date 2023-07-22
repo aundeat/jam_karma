@@ -16,7 +16,7 @@ public class PlayerMovement2D : MonoBehaviour
 
     private Vector2 moveDirection;
     private Transform playerTransform;
-
+    public Animator animator;
     void Start()
     {
         playerTransform = transform;
@@ -24,6 +24,10 @@ public class PlayerMovement2D : MonoBehaviour
 
     void Update()
     {
+       // animator.SetFloat("Horizontal", moveDirection.y);
+       // animator.SetFloat("Vertical", moveDirection.x);
+        //animator.SetFloat("speed", moveDirection.magnitude);
+
         // Если нажата левая кнопка мыши
         if (Input.GetMouseButtonDown(0))
         {
@@ -38,8 +42,11 @@ public class PlayerMovement2D : MonoBehaviour
         // Calculate the move direction
         moveDirection = new Vector2(horizontal, vertical).normalized;
 
-        // Apply movement
-        playerTransform.Translate(moveDirection * movementSpeed * Time.deltaTime);
+        
+        
+            // Apply movement
+            playerTransform.Translate(moveDirection * movementSpeed * Time.deltaTime);
+            
     }
     void ThrowKnife(float speed1, GameObject object1)
     {
