@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class levl_one : MonoBehaviour
+public class scene2_load : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,8 +16,8 @@ public class levl_one : MonoBehaviour
     {
         
     }
-    public void Scene_one()
+    public void Scene_two()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Scene2");
     }
 }
