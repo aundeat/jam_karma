@@ -7,6 +7,8 @@ public class HealthScript : MonoBehaviour
     //amount of health
     public int health;
 
+    public int maxHealth;
+
     //Cooldown before object can be damaged again
     public float damageCooldown;
 
@@ -71,12 +73,42 @@ public class HealthScript : MonoBehaviour
 
                 }
             }
+
+            //TODO: Update UI
+
         }
-       
+
     }
 
     public void IncreaseHealth(int amount) 
     { 
         health += amount; 
+
+        if(health >= maxHealth)
+        {
+            health = maxHealth;
+        }
+
+        //TODO: Update UI
+    }
+
+
+    public void IncreaseMaxHealth(int amount)
+    {
+        maxHealth += amount;
+
+        //TODO: update Ui
+    }
+
+    public void DecreaseMaxHealth(int amount)
+    {
+        maxHealth -= amount;
+
+        if(maxHealth <= 0)
+        {
+            maxHealth = 0;
+        }
+
+        //TODO: Update UI
     }
 }

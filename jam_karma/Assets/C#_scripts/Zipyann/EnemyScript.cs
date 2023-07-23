@@ -68,4 +68,15 @@ public class EnemyScript : MonoBehaviour
 
         rb.velocity = moveDirection * currentDirection.speed;
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+
+        //Swap direction on collide:
+
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            moveDirection = -moveDirection;
+        }
+    }
 }

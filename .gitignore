@@ -7,8 +7,8 @@ jam_karma/[Tt]emp/
 jam_karma/[Oo]bj/
 jam_karma/[Bb]uild/
 jam_karma/[Bb]uilds/
-jam_karma/[Ll]ogs/
-jam_karma/[Uu]ser[Ss]ettings/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -61,6 +61,7 @@ sysinfo.txt
 *.unitypackage
 *.app
 *dylib
+*.dwlt
 
 # Crashlytics generated file
 crashlytics-build.properties
