@@ -17,9 +17,13 @@ public class HealthScript : MonoBehaviour
     //start health at the beginning
     private int defaultHealth;
 
+    private FlashScript flashScript;
+
     void Start()
     {
         defaultHealth = health;
+
+        flashScript = GetComponent<FlashScript>();
     }
 
     // Update is called once per frame
@@ -28,6 +32,11 @@ public class HealthScript : MonoBehaviour
         if(isCooldown && Time.time > cooldownTime)
         {
             isCooldown = false;
+
+            if (flashScript != null)
+            {
+                flashScript.StopFlashing();
+            }
         }
     }
 
@@ -40,10 +49,15 @@ public class HealthScript : MonoBehaviour
 
             isCooldown = true;
 
+            if (flashScript != null)
+            {
+                flashScript.StartFlashing();
+            }
+
 
             if (health <= 0)
             {
-                if (gameObject.CompareTag("Enemy"))
+                if (gameObject.CompareTag("Enemy") || gameObject.CompareTag("Villager"))
                 {
                     //Kill enemy
                     gameObject.SetActive(false);

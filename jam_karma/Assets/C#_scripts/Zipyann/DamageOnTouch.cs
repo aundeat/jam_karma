@@ -10,13 +10,15 @@ public class DamageOnTouch : MonoBehaviour
     //Damages Enemies
     public bool damageEnemy;
 
+    public bool damageVillager;
+
     //Amount of damage done
     public int damageAmount;
 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if((damageEnemy && other.gameObject.CompareTag("Enemy")) || (damagePlayer && other.gameObject.CompareTag("Player")))
+        if((damageEnemy && other.gameObject.CompareTag("Enemy")) || (damagePlayer && other.gameObject.CompareTag("Player")) || (damageVillager && other.gameObject.CompareTag("Villager")))
         {
             //Damage enemy or player
             other.gameObject.GetComponent<HealthScript>().DecreaseHealth(damageAmount);

@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class BounceScript : MonoBehaviour
 {
-    public float bounceHeight = 0.1f;
-    public float bounceFrequency = 5f;
+    public float bounceHeight = 2;
+    public float bounceFrequency = 17;
 
-    public float swayAmount = 10f;
-    public float swaySpeed = 2f;
+    public float swayAmount = 1;
+    public float swaySpeed = 18;
 
     private float defaultRotation;
 
