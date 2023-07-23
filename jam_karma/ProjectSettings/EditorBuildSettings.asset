@@ -6,15 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main_menu.unity
-    guid: a575cf5e0f8618a4ba3bb7b2978570e4
-  - enabled: 1
-    path: Assets/Scenes/Zipyann/ZipyannScene.unity
-    guid: a61f91ea7305e4b408e97da76441f464
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Scene2 1.unity
+    guid: 904750cee5baf934b97ab61b5388f4bf
   - enabled: 1
     path: Assets/Scenes/Scene2.unity
     guid: 20448ffeda487fd41a8352f201c5e663
+  - enabled: 1
+    path: Assets/C#_scripts/Zipyann/end_game/youaregood.unity
+    guid: 7b385cce7865c7543bb9f9b09b06c767
   m_configObjects: {}

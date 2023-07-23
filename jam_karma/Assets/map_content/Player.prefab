@@ -272,5 +272,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sortingOrderBase: 5000
-  offset: -2
+  offset: -3
   runOnlyOnce: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemScript : MonoBehaviour
@@ -12,6 +13,8 @@ public class ItemScript : MonoBehaviour
     public bool canSteal;
 
     public AudioClip pickupSound;
+
+    public GameObject soundPicup;
 
     private AudioSource audioSource;
     private GameObject player;
@@ -39,6 +42,18 @@ public class ItemScript : MonoBehaviour
             if (canSteal)
             {
                 player.GetComponent<PlayerAttributes>().DecreaseKarma(1);
+            }
+            // Включаем AudioSource, если он был отключен
+            if (!audioSource.isPlaying)
+            {
+                audioSource.enabled = true;
+            }
+            // Play pickup sound
+            if (pickupSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(pickupSound);
+               
+                Instantiate(soundPicup);
             }
 
             Destroy(gameObject);
