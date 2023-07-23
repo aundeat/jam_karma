@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sortingOrderBase: 5000
-  offset: -2
+  offset: -3
   runOnlyOnce: 0
 --- !u!61 &-7490029642399069136
 BoxCollider2D:
