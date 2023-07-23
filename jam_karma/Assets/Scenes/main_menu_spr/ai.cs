@@ -11,6 +11,7 @@ public class ai : MonoBehaviour
 
     private Vector2 randomTarget; // —лучайна€ целева€ позици€
     private float currentAngle = 0f; // “екущий угол наклона спрайта
+    
 
     void Start()
     {
@@ -21,10 +22,12 @@ public class ai : MonoBehaviour
     void Update()
     {
         // ≈сли житель достиг случайной целевой позиции, выберем новую целевую позицию
+        
         if (Vector2.Distance(transform.position, randomTarget) < 0.1f)
         {
             StartWalking();
         }
+       
 
         // ѕеремещение жител€ в сторону случайной целевой позиции
         transform.position = Vector2.MoveTowards(transform.position, randomTarget, moveSpeed * Time.deltaTime);
