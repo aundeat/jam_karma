@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/C#_scripts/Zipyann/end_game/youaregood.unity
     guid: 7b385cce7865c7543bb9f9b09b06c767
+  - enabled: 1
+    path: Assets/C#_scripts/Zipyann/end_game/youarebad.unity
+    guid: cd44318e666035f48b312e7066df8b63
+  - enabled: 1
+    path: Assets/SadDude/Scene2_Copy_SadDude.unity
+    guid: 18002a31c9e402e46814419f0d6ca690
   m_configObjects: {}

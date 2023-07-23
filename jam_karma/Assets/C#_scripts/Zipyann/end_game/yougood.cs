@@ -8,7 +8,7 @@ public class yougood : MonoBehaviour
     public GameObject player;
     private void OnCollisionEnter2D(Collision2D other)
     {
-        int karma = GetComponent<PlayerAttributes>().karma;
+        int karma = player.GetComponent<PlayerAttributes>().karma;
 
 
         if (karma > 5)

@@ -18,6 +18,6 @@ public class levl_one : MonoBehaviour
     }
     public void Scene_one()
     {
-        SceneManager.LoadScene("Scene2");
+        SceneManager.LoadScene("Scene2_Copy_SadDude");
     }
 }
