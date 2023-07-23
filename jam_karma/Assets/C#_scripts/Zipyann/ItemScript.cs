@@ -11,6 +11,9 @@ public class ItemScript : MonoBehaviour
     public int price;
     public bool canSteal;
 
+    public AudioClip pickupSound;
+
+    private AudioSource audioSource;
     private GameObject player;
     private bool canTake;
 
@@ -18,12 +21,14 @@ public class ItemScript : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(canTake && player.GetComponent<PlayerAttributes>().money >= price && Input.GetKeyDown(KeyCode.E)) {
+        if (canTake && player.GetComponent<PlayerAttributes>().money >= price && Input.GetKeyDown(KeyCode.E))
+        {
 
             //Take item
             player.GetComponent<HealthScript>().IncreaseHealth(health);
@@ -37,6 +42,8 @@ public class ItemScript : MonoBehaviour
             }
 
             Destroy(gameObject);
+
+          
 
         }
     }

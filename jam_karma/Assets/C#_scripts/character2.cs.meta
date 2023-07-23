@@ -3,7 +3,10 @@ guid: 29c34a7c4a09dba41976e4aa8f02e071
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - knifePrefab: {instanceID: 0}
+  - throwSound: {fileID: 8300000, guid: ecf0181b3e256d7459c7d06e22d13a65, type: 3}
+  - audioSource: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
