@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4241788936042773500}
   - component: {fileID: 2933348424390742437}
   - component: {fileID: 8112624850091144282}
-  - component: {fileID: 4499066808853813021}
   m_Layer: 0
   m_Name: villager_02
   m_TagString: Untagged
@@ -102,18 +101,3 @@ MonoBehaviour:
   movementBoundsMax: {x: -10, y: -5}
   moveSpeed: 2
   maxAngle: 15
---- !u!114 &4499066808853813021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8182635155196285374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fae3f2df6f3e6940a6bf26944197c42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sortingOrderBase: 5000
-  offset: -2
-  runOnlyOnce: 0

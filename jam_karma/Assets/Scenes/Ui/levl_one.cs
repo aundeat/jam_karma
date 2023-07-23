@@ -18,6 +18,6 @@ public class levl_one : MonoBehaviour
     }
     public void Scene_one()
     {
-        SceneManager.LoadScene("ZipyannScene");
+        SceneManager.LoadScene("SampleScene");
     }
 }
