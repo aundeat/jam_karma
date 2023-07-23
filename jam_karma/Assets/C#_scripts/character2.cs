@@ -97,21 +97,28 @@ public class caracter2 : MonoBehaviour
     }
     void ThrowKnife(float speed1, GameObject object1)
     {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = 0f; // Задаем Z-координату равной 0
 
-        // Вычисляем направление броска
-        Vector2 throwDirection = (mousePosition - transform.position).normalized;
+        if(GetComponent<PlayerAttributes>().ammo > 0)
+        {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = 0f; // Задаем Z-координату равной 0
 
-        // Создаем экземпляр ножа
-        GameObject ammoInstance = Instantiate(object1, transform.position, Quaternion.identity);
+            // Вычисляем направление броска
+            Vector2 throwDirection = (mousePosition - transform.position).normalized;
 
-        // Придаем ножу скорость броска
-        Rigidbody2D knifeRigidbody = ammoInstance.GetComponent<Rigidbody2D>();
-        knifeRigidbody.velocity = throwDirection * throwForce;
-        // поворот предмета
-        float angle = Mathf.Atan2(throwDirection.y, throwDirection.x) * Mathf.Rad2Deg;
-        ammoInstance.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+            // Создаем экземпляр ножа
+            GameObject ammoInstance = Instantiate(object1, transform.position, Quaternion.identity);
+
+            // Придаем ножу скорость броска
+            Rigidbody2D knifeRigidbody = ammoInstance.GetComponent<Rigidbody2D>();
+            knifeRigidbody.velocity = throwDirection * throwForce;
+            // поворот предмета
+            float angle = Mathf.Atan2(throwDirection.y, throwDirection.x) * Mathf.Rad2Deg;
+            ammoInstance.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+
+            GetComponent<PlayerAttributes>().DecreaseAmmo(1);
+        }
+        
 
     }
     

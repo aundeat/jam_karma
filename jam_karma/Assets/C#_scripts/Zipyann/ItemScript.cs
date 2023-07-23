@@ -6,8 +6,9 @@ public class ItemScript : MonoBehaviour
 {
 
     public int health;
-    public int ammo;
     public int maxHealthBonus;
+    public int ammo;
+    public int price;
     public bool canSteal;
 
     private GameObject player;
@@ -22,15 +23,15 @@ public class ItemScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canTake && Input.GetKeyDown(KeyCode.E)) {
+        if(canTake && player.GetComponent<PlayerAttributes>().money >= price && Input.GetKeyDown(KeyCode.E)) {
 
             //Take item
             player.GetComponent<HealthScript>().IncreaseHealth(health);
             player.GetComponent<HealthScript>().IncreaseMaxHealth(maxHealthBonus);
             player.GetComponent<PlayerAttributes>().IncreaseAmmo(ammo);
+            player.GetComponent<PlayerAttributes>().DecreaseMoney(price);
 
-
-            if(canSteal)
+            if (canSteal)
             {
                 player.GetComponent<PlayerAttributes>().DecreaseKarma(1);
             }

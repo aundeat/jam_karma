@@ -61,6 +61,18 @@ public class HealthScript : MonoBehaviour
             {
                 if (gameObject.CompareTag("Enemy") || gameObject.CompareTag("Villager"))
                 {
+
+                    if(gameObject.transform.childCount > 0)
+                    {
+                        gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                        gameObject.transform.GetChild(0).gameObject.transform.parent = null;
+                    }
+
+                    if (gameObject.CompareTag("Villager"))
+                    {
+                        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>().DecreaseKarma(1);
+                    }
+
                     //Kill enemy
                     gameObject.SetActive(false);
                 }
