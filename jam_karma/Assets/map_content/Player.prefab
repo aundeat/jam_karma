@@ -206,6 +206,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knifePrefab: {fileID: 1534923061299652033, guid: 38ed0a0fb5d3b954ab209eb560969b88, type: 3}
   throwForce: 10
+  moveSounds: []
+  throwSound: {fileID: 0}
+  audioSource: {fileID: 0}
+  soundInterval: 0.5
   moveSpeed: 5
   swayAmount: 1
   swaySpeed: 12.68
