@@ -7,7 +7,7 @@ public class SelfDestroyOnTouch : MonoBehaviour
 
     public string[] tags;
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         for(int i = 0; i < tags.Length; i++)
         {

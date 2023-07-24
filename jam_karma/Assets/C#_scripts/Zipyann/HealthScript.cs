@@ -15,9 +15,13 @@ public class HealthScript : MonoBehaviour
 
     public bool isBoss;
 
+    public AudioClip deathSound;
+
     private bool isCooldown;
 
     private float cooldownTime;
+
+    private AudioSource audioSource;
 
     //start health at the beginning
     private int defaultHealth;
@@ -29,6 +33,8 @@ public class HealthScript : MonoBehaviour
         defaultHealth = health;
 
         flashScript = GetComponent<FlashScript>();
+
+        //audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -62,8 +68,15 @@ public class HealthScript : MonoBehaviour
 
             if (health <= 0)
             {
+                /*if (!audioSource.isPlaying)
+                {
+                    audioSource.enabled = true;
+                }*/
+
                 if (gameObject.CompareTag("Enemy") || gameObject.CompareTag("Villager"))
                 {
+
+
 
                     if(gameObject.transform.childCount == 1)
                     {
@@ -119,8 +132,40 @@ public class HealthScript : MonoBehaviour
 
                     }
 
+
+                    // Play death sound
+                    if (deathSound != null && audioSource != null)
+                    {
+                        
+
+
+                        GetComponent<FlashScript>().enabled = false;
+
+                        GetComponent<SpriteRenderer>().enabled = false;
+                       GetComponent<DamageOnTouch>().enabled = false;
+                        
+                        if(GetComponent<EnemyShooting>() != null)
+                        {
+                            GetComponent<EnemyShooting>().canShoot = false;
+                        }
+
+                        if (GetComponent<EnemyScript>() != null)
+                        {
+                            GetComponent<EnemyScript>().canMove = false;
+                        }
+
+                        GetComponent<BoxCollider2D>().isTrigger = true;
+
+                        audioSource.PlayOneShot(deathSound);
+
+
+                        // Instantiate(soundPicup);
+                    }
+
+
                     //Kill enemy
                     gameObject.SetActive(false);
+                  // StartCoroutine(WaitForDestroy());
 
                 }
                 else if (gameObject.CompareTag("Player"))
@@ -129,6 +174,7 @@ public class HealthScript : MonoBehaviour
                     //Test: Respawn at checkpoint
                     health = defaultHealth;
                     gameObject.GetComponent<PlayerAttributes>().ammo = 20;
+                    gameObject.GetComponent<PlayerAttributes>().DecreaseKarma(10);
                     gameObject.transform.position = GetComponent<PlayerAttributes>().currentCheckpoint;
 
                 }
@@ -171,5 +217,11 @@ public class HealthScript : MonoBehaviour
 
         //TODO: Update UI
     }
-    
+
+    IEnumerator WaitForDestroy()
+    {
+        yield return new WaitForSeconds(0.7f);
+        gameObject.SetActive(false);
+    }
+
 }

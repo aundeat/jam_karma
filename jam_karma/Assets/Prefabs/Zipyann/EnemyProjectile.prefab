@@ -175,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damagePlayer: 1
   damageEnemy: 0
-  damageVillager: 0
+  damageVillager: 1
   damageAmount: 1
 --- !u!114 &9115315826089064767
 MonoBehaviour:
