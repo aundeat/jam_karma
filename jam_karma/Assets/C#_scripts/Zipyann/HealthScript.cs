@@ -173,6 +173,7 @@ public class HealthScript : MonoBehaviour
                     //TODO: Kill Player (respawn at last checkpoint with less ammo or karma??)
                     //Test: Respawn at checkpoint
                     health = defaultHealth;
+                    gameObject.GetComponent<HealthScript>().health = 5;
                     gameObject.GetComponent<PlayerAttributes>().ammo = 20;
                     gameObject.GetComponent<PlayerAttributes>().DecreaseKarma(10);
                     gameObject.transform.position = GetComponent<PlayerAttributes>().currentCheckpoint;

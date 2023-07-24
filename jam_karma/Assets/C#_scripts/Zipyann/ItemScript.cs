@@ -32,7 +32,7 @@ public class ItemScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canTake && !isTaken && player.GetComponent<PlayerAttributes>().money >= price && ((!canSteal && price <=0)||Input.GetKeyDown(KeyCode.E)))
+        if (canTake && !isTaken && (player.GetComponent<HealthScript>().health < player.GetComponent<HealthScript>().maxHealth || health == 0) &&  player.GetComponent<PlayerAttributes>().money >= price && ((!canSteal && price <=0)||Input.GetKeyDown(KeyCode.E)))
         {
 
             //Take item
