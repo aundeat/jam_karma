@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class selfDelete : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float destroytime = 2f;
     void Start()
     {
-        Invoke("self", 1f);
+        StartCoroutine(Wait());
     }
-    private void self()
+    private IEnumerator Wait ()
     {
+        yield return new WaitForSeconds(destroytime);
+
         Destroy(gameObject);
     }
 
