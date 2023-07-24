@@ -8,9 +8,16 @@ public class PlayerAttributes : MonoBehaviour
     public int ammo;
     public int money;
 
-    public Transform currentCheckpoint;
+    public int attackStrength;
 
-    
+    public Vector2 currentCheckpoint;
+
+
+    private void Start()
+    {
+        currentCheckpoint = transform.position;
+    }
+
 
     public void IncreaseAmmo(int amount)
     {
@@ -24,11 +31,21 @@ public class PlayerAttributes : MonoBehaviour
     public void IncreaseKarma(int amount)
     {
         karma += amount;
+
+        if (karma > 0)
+        {
+            attackStrength = 2;
+        }
     }
 
     public void DecreaseKarma(int amount)
     {
         karma -= amount;
+
+        if (karma < 0)
+        {
+            attackStrength = 1;
+        }
     }
 
     public void IncreaseMoney(int amount)

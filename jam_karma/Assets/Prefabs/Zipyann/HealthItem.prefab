@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4551099984657760271
 SpriteRenderer:
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 03e08d73ab0db3b44ac20ef561112560, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -103,9 +103,11 @@ MonoBehaviour:
   health: 1
   maxHealthBonus: 0
   ammo: 0
+  money: 0
   price: 0
   canSteal: 1
   pickupSound: {fileID: 8300000, guid: aee16d4ae1db8ff48bab5d73860e20e2, type: 3}
+  soundPicup: {fileID: 0}
 --- !u!61 &4536498255232145654
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -190,7 +192,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: aee16d4ae1db8ff48bab5d73860e20e2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.199
   m_Pitch: 1
   Loop: 0
   Mute: 0

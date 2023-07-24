@@ -8,12 +8,21 @@ public class EnemyShooting : MonoBehaviour
     public GameObject projectilePrefab;
     public float projectileSpeed;
 
+    public bool canShoot;
+
     [SerializeField]
     public List<ShootingAction> shootingActions = new List<ShootingAction>();
     public Transform target;
     private float nextShootingTime;
     private ShootingAction currentShootingAction;
     private int shootingCount;
+
+
+    private void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+
+    }
 
 
     // Update is called once per frame
@@ -29,7 +38,7 @@ public class EnemyShooting : MonoBehaviour
 
 
             // Calculate the direction to the player
-            Vector3 directionToTarget = (target.position - transform.position).normalized;
+            Vector3 directionToTarget = (target.position + (Vector3)(Random.insideUnitCircle.normalized) * currentShootingAction.targetError - transform.position).normalized;
 
             // Calculate the rotation angle to face the player
             float angle = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg - 90f;
@@ -43,11 +52,16 @@ public class EnemyShooting : MonoBehaviour
                 // Calculate the rotation for the bullet direction
                 Quaternion bulletRotation = Quaternion.Euler(new Vector3(0f, 0f, angle + spreadOffset));
 
-                // Instantiate the bullet at the enemy's position with the calculated rotation
-                GameObject bullet = Instantiate(projectilePrefab, transform.position, bulletRotation);
+                if (canShoot)
+                {
+                    // Instantiate the bullet at the enemy's position with the calculated rotation
+                    GameObject bullet = Instantiate(projectilePrefab, transform.position, bulletRotation);
 
-                // Add force to the bullet to move it towards the player
-                bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * projectileSpeed;
+                    // Add force to the bullet to move it towards the player
+                    bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * projectileSpeed;
+                }
+
+                
             }
         }
 

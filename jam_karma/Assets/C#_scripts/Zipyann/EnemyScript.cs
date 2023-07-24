@@ -8,6 +8,8 @@ public class EnemyScript : MonoBehaviour
 
     public GameObject target;
 
+    public bool canMove;
+
     [SerializeField]
     public List<EnemyDirection> directions = new List<EnemyDirection>();
 
@@ -29,6 +31,8 @@ public class EnemyScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
+        target = GameObject.FindGameObjectWithTag("Player");
+
 
         currentDirection = directions[0];
     }
@@ -40,10 +44,12 @@ public class EnemyScript : MonoBehaviour
         if (Time.time > switchDirectionTime)
         {
 
-            directionCounter++;
-            directionCounter %= directions.Count;
+            
 
             currentDirection = directions[directionCounter];
+
+            directionCounter++;
+            directionCounter %= directions.Count;
 
             switchDirectionTime = Time.time + currentDirection.duration;
 
@@ -66,7 +72,11 @@ public class EnemyScript : MonoBehaviour
 
         }
 
-        rb.velocity = moveDirection * currentDirection.speed;
+        if(canMove)
+        {
+            rb.velocity = moveDirection * currentDirection.speed;
+
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)

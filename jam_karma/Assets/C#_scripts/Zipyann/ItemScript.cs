@@ -9,6 +9,7 @@ public class ItemScript : MonoBehaviour
     public int health;
     public int maxHealthBonus;
     public int ammo;
+    public int money;
     public int price;
     public bool canSteal;
 
@@ -19,6 +20,7 @@ public class ItemScript : MonoBehaviour
     private AudioSource audioSource;
     private GameObject player;
     private bool canTake;
+    private bool isTaken;
 
     // Start is called before the first frame update
     void Start()
@@ -30,14 +32,20 @@ public class ItemScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canTake && player.GetComponent<PlayerAttributes>().money >= price && Input.GetKeyDown(KeyCode.E))
+        if (canTake && !isTaken && player.GetComponent<PlayerAttributes>().money >= price && ((!canSteal && price <=0)||Input.GetKeyDown(KeyCode.E)))
         {
 
             //Take item
             player.GetComponent<HealthScript>().IncreaseHealth(health);
             player.GetComponent<HealthScript>().IncreaseMaxHealth(maxHealthBonus);
             player.GetComponent<PlayerAttributes>().IncreaseAmmo(ammo);
-            player.GetComponent<PlayerAttributes>().DecreaseMoney(price);
+            player.GetComponent<PlayerAttributes>().IncreaseMoney(money);
+
+            if (!canSteal)
+            {
+                player.GetComponent<PlayerAttributes>().DecreaseMoney(price);
+
+            }
 
             if (canSteal)
             {
@@ -52,11 +60,14 @@ public class ItemScript : MonoBehaviour
             if (pickupSound != null && audioSource != null)
             {
                 audioSource.PlayOneShot(pickupSound);
-               
-                Instantiate(soundPicup);
+
+                
+                GetComponent<SpriteRenderer>().enabled = false;
+                isTaken = true;
+               // Instantiate(soundPicup);
             }
 
-            Destroy(gameObject);
+            StartCoroutine(WaitForDestroy());
 
           
 
@@ -77,5 +88,12 @@ public class ItemScript : MonoBehaviour
         {
             canTake = false;
         }
+    }
+
+
+    IEnumerator WaitForDestroy()
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 }

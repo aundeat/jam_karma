@@ -113,6 +113,8 @@ public class character2 : MonoBehaviour
             // Создаем экземпляр ножа
             GameObject ammoInstance = Instantiate(object1, transform.position, Quaternion.identity);
 
+            ammoInstance.GetComponent<DamageOnTouch>().damageAmount = GetComponent<PlayerAttributes>().attackStrength;
+
             // Придаем ножу скорость броска
             Rigidbody2D knifeRigidbody = ammoInstance.GetComponent<Rigidbody2D>();
             knifeRigidbody.velocity = throwDirection * throwForce;

@@ -255,10 +255,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fae2cfb5ce22cd24ea26b02d1c6c3530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  karma: 0
+  karma: -20
   ammo: 30
   money: 0
-  currentCheckpoint: {fileID: 0}
+  attackStrength: 1
+  currentCheckpoint: {x: 0, y: 0}
 --- !u!114 &-3664315858701984397
 MonoBehaviour:
   m_ObjectHideFlags: 0
