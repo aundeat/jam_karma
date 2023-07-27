@@ -17,6 +17,6 @@ public class UIScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Text>().text = "Health: " + player.GetComponent<HealthScript>().health + "/" + player.GetComponent<HealthScript>().maxHealth + " Ammo: " + player.GetComponent<PlayerAttributes>().ammo + " Money: " + player.GetComponent<PlayerAttributes>().money;
+        GetComponent<Text>().text = "Health: " + player.GetComponent<HealthScript>().health + "/" + player.GetComponent<HealthScript>().maxHealth  + " Money: " + player.GetComponent<PlayerAttributes>().money;
     }
 }
